@@ -1,23 +1,32 @@
+// server.js
 const express = require("express");
 const swaggerUI = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
 const taskRoutes = require("./routes/taskRoutes");
-const errorHandler = require("./Middlewares/middleware");
+const errorHandler = require("./middlewares/middleware");
 
 const app = express();
 
 app.use(express.json());
 
-// ✅ 1. Swagger FIRST
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+// 1️⃣ Serve Swagger JSON
+app.get("/swagger.json", (req, res) => {
+  res.json(swaggerSpec);
+});
 
-// ✅ 2. API routes AFTER
+// 2️⃣ Swagger UI setup (load JSON dynamically)
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(null, {
+  swaggerUrl: "/swagger.json",
+  explorer: true
+}));
+
+// 3️⃣ API routes
 app.use("/api", taskRoutes);
 
-// ✅ 3. Error handler LAST
+// 4️⃣ Error handler last
 app.use(errorHandler);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
