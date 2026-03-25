@@ -1,0 +1,190 @@
+{
+  "info": {
+    "_postman_id": "f9a9638a-ea13-4355-aade-fa4d8539170f",
+    "name": "TaskManager-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53027006",
+    "_collection_link": "https://go.postman.co/collection/53027006-f9a9638a-ea13-4355-aade-fa4d8539170f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Task By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/8deae086-af45-41a1-9e66-b3d7bdd61651",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "8deae086-af45-41a1-9e66-b3d7bdd61651"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Tak by search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?title=Deploy a Mini Project Online",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Deploy a Mini Project Online"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Master advanced Tailwind \",\r\n   \"completed\": true,\r\n    \"description\": \" Recreate a complex layout from scratch using tailwind to understand responsive design deeply.\"\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"title\": \"Learn Nodejs\",\r\n\"completed\": true,\r\n\"description\": \"Practice knowledge on API project\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/8deae086-af45-41a1-9e66-b3d7bdd61651",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "8deae086-af45-41a1-9e66-b3d7bdd61651"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/2f71c108-89b8-4acd-a348-d7e33bf51644",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "2f71c108-89b8-4acd-a348-d7e33bf51644"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Task Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"title\": \"Learn MongoDB\",\r\n\"completed\": true,\r\n\"description\": \"Practice API project\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
