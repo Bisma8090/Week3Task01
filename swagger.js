@@ -10,7 +10,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:5000/api",
+      url: "https://week3-task01.vercel.app/api",
       description: "Local server",
     },
   ],
