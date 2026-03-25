@@ -8,12 +8,12 @@ const swaggerDefinition = {
     version: "1.0.0",
     description: "A simple RESTful API to manage tasks (CRUD) using Express.js. Includes search and stats endpoints.",
   },
-  servers: [
-    {
-      url: "https://week3-task01.vercel.app/api",
-      description: " server",
-    },
-  ],
+ servers: [
+  {
+    url: "/api", // relative URL
+    description: "Local / deployed API",
+  },
+],
 };
 
 const options = {
