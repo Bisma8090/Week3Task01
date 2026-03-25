@@ -8,10 +8,13 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api", taskRoutes);
-
+// ✅ 1. Swagger FIRST
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
+// ✅ 2. API routes AFTER
+app.use("/api", taskRoutes);
+
+// ✅ 3. Error handler LAST
 app.use(errorHandler);
 
 const PORT = 5000;
